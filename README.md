@@ -2,7 +2,9 @@
 A Clojure library designed to parse, validate and process accounts and transactions for testing purposes.
 
 ## Build 
-`docker build -t clojure-bank .`
+```
+$ docker build -t clojure-bank .
+```
 
 ## Run
 ```
@@ -19,15 +21,30 @@ $ docker run -i --rm clojure-bank < operations
 
 ## Development
 The project was built with Leiningen ([Leiningen](https://leiningen.org)).
+
 The project organisation was based on the hexagonal architecture:
-	* Ports: The layer that communicates with the outside world (e.g. cli).
-	* Adapters: The layer that converts external data representations into internal ones, and vice-versa (e.g. adapters, db).
-	* Services: All the business / application / domain logic lives here (e.g. services, validations).
+* **Ports**: The layer that communicates with the outside world (e.g. cli).
+* **Adapters**: The layer that converts external data representations into internal ones, and vice-versa (e.g. adapters, db).
+* **Services**: All the business / application / domain logic lives here (e.g. services, validations).
 
 ### Run
-`lein run < operations`
+```
+$ lein run < operations
+```
 
 ### Tests
-* Unit: `lein test`
-* Integration: `lein test :integration`
-* All: `lein test :all`
+
+#### Unit
+```
+$ lein test
+```
+
+#### Integration
+```
+$ lein test :integration
+```
+
+#### All
+```
+$ lein test :all
+```
